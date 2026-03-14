@@ -1,0 +1,38 @@
+@import '../node_modules/modern-normalize/modern-normalize.css';
+
+:root {
+	/* colors */
+	--color-green-light: #E8ECE6;
+	--color-green-mid: #2A501E;
+	--color-green-dark: #162E0E;
+	--color-white: #fff;
+	--color-black-translucent: #00000080;
+
+	/* spacing */
+	--spacing: 0.25rem;
+	--spacing-1: calc(var(--spacing) * 1);
+	--spacing-2: calc(var(--spacing) * 2);
+	--spacing-4: calc(var(--spacing) * 4);
+	--spacing-8: calc(var(--spacing) * 8);
+	--spacing-16: calc(var(--spacing) * 16);
+	--spacing-32: calc(var(--spacing) * 32);
+	--spacing-64: calc(var(--spacing) * 64);
+
+	/* container */
+	--container: calc(var(--spacing) * 16);
+	--container-1: calc(var(--container) * 1);
+	--container-2: calc(var(--container) * 2);
+	--container-4: calc(var(--container) * 4);
+	--container-8: calc(var(--container) * 8);
+	--container-16: calc(var(--container) * 16);
+	--container-32: calc(var(--container) * 32);
+	--container-64: calc(var(--container) * 64);
+
+	/* styles */
+	font-family: monospace;
+	line-height: 1;
+
+	p, h1, h2, h3, h4, h5 {
+		margin: 0;
+	}
+}

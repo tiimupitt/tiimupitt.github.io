@@ -6,6 +6,7 @@ const stylelint = {
   rules: {
     'at-rule-no-unknown': null,
     'custom-property-pattern': null,
+    'import-notation': 'string',
     'length-zero-no-unit': [true, { ignore: ['custom-properties'] }],
     'no-descending-specificity': null,
     'order/properties-order': [
