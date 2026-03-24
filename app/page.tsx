@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import WoodImage from '@/app/image/wood.jpg'
 import styles from '@/app/styles.module.css'
-import Experience from '@/app/ui/experience'
+import CurriculumVitae from '@/app/ui/curriculum-vitae'
 import Sidebar from '@/app/ui/sidebar'
 
 export default function Page() {
@@ -13,7 +13,7 @@ export default function Page() {
         <div className={styles.wrapper}>
           <Image alt="wood background" className={styles.wood} src={WoodImage} />
           <div className={styles.content}>
-            <Experience />
+            <CurriculumVitae />
           </div>
         </div>
       </main>

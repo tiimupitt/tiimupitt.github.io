@@ -7,7 +7,7 @@ import { HeadingSize } from '@/app/ui/heading/types'
 
 import styles from './styles.module.css'
 
-const Experience: FunctionComponent = () => {
+const CurriculumVitae: FunctionComponent = () => {
   return (
     <File title="CV">
       <ul className={styles.container}>
@@ -94,4 +94,4 @@ const Experience: FunctionComponent = () => {
   )
 }
 
-export default Experience
+export default CurriculumVitae
