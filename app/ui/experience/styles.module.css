@@ -1,0 +1,19 @@
+.container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-7);
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+
+	p {
+		font-size: var(--spacing-5);
+		font-weight: 300;
+	}
+
+	h2:not(:first-child) {
+		padding-top: var(--spacing-7);
+		border-top: dotted var(--spacing-2) var(--color-black-translucent);
+	}
+}

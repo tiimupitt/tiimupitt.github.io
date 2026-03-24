@@ -1,0 +1,48 @@
+.folder {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	border-radius: var(--spacing-4);
+	box-shadow: 0 var(--spacing-1) var(--spacing-2) var(--color-black-translucent);
+	background-color: var(--color-green-light);
+	color: var(--color-green-dark);
+	rotate: -2deg;
+	overflow: hidden;
+}
+
+.window {
+	position: relative;
+	display: flex;
+	overflow: hidden;
+
+	&::before, &::after {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		width: calc(100% - var(--spacing-4));
+		height: var(--spacing-7);
+		background: linear-gradient(to bottom, var(--color-green-light), transparent);	
+	}
+
+	&::before {
+		top: 0;
+	}
+
+	&::after {
+		bottom: 0;
+		rotate: 180deg;
+	}
+}
+
+.scroller {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-7);
+	width: 100%;
+	padding: var(--spacing-7);
+	overflow-y: scroll;
+	scrollbar-color:  var(--color-green-mid) transparent;
+}
+
