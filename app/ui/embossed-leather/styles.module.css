@@ -1,0 +1,113 @@
+.container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	box-shadow: inset 0 calc(var(--spacing-5) * -1) var(--spacing-3) calc(var(--spacing-4) * -1) var(--color-black-translucent);
+	background-color: var(--color-green-mid);
+
+	@media screen and (width >= 1300px) {
+		box-shadow: inset calc(var(--spacing-5) * -1) 0 var(--spacing-3) calc(var(--spacing-4) * -1) var(--color-black-translucent);
+	} 
+}
+
+.leather {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: .6;
+	mix-blend-mode: luminosity;
+}
+
+.embossing {
+	position: absolute;
+	z-index: 10;
+	display: grid;
+	grid-template:
+		'top-left-corner top-left-edge top-center top-right-edge top-right-corner' var(--container-2)
+		'left-top-edge . . . right-top-edge'
+		'left-center . . . right-center' var(--container-2)
+		'left-bottom-edge . . . right-bottom-edge'
+		'bottom-left-corner bottom-left-edge bottom-center bottom-right-edge bottom-right-corner' var(--container-2)
+		/ var(--container-2) auto var(--container-2)  auto var(--container-2);
+	width: 100%;
+	height: 100%;
+	padding: var(--spacing-6);
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: fill;
+		filter: invert(1) brightness(0.7) sepia(1) opacity(.8)
+	}
+}
+
+.top-left-corner {
+	grid-area: top-left-corner;
+}
+
+.top-right-corner {
+	grid-area: top-right-corner;
+	rotate: 90deg;
+}
+
+.bottom-left-corner {
+	grid-area: bottom-left-corner;
+	rotate: -90deg;
+}
+
+.bottom-right-corner {
+	grid-area: bottom-right-corner;
+	rotate: 180deg;
+}
+
+.top-center {
+	grid-area: top-center;
+}
+
+.left-center {
+	grid-area: left-center;
+	rotate: -90deg;
+}
+
+.right-center {
+	grid-area: right-center;
+	rotate: 90deg;
+}
+
+.bottom-center {
+	grid-area: bottom-center;
+	rotate: 180deg;
+}
+
+.top-left-edge {
+	grid-area: top-left-edge;
+}
+
+.top-right-edge {
+	grid-area: top-right-edge;
+}
+
+.right-top-edge {
+	grid-area: right-top-edge;
+}
+
+.right-bottom-edge {
+	grid-area: right-bottom-edge;
+}
+
+.bottom-left-edge {
+	grid-area: bottom-left-edge;
+}
+
+.bottom-right-edge {
+	grid-area: bottom-right-edge;
+}
+
+.left-top-edge {
+	grid-area: left-top-edge;
+}
+
+.left-bottom-edge {
+	grid-area: left-bottom-edge;
+}
