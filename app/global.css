@@ -8,25 +8,29 @@
 	--color-white: #fff;
 	--color-black-translucent: #00000080;
 
-	/* spacing */
+	/* spacing (fibonacci) */
 	--spacing: 0.25rem;
 	--spacing-1: calc(var(--spacing) * 1);
 	--spacing-2: calc(var(--spacing) * 2);
-	--spacing-4: calc(var(--spacing) * 4);
-	--spacing-8: calc(var(--spacing) * 8);
-	--spacing-16: calc(var(--spacing) * 16);
-	--spacing-32: calc(var(--spacing) * 32);
-	--spacing-64: calc(var(--spacing) * 64);
+	--spacing-3: calc(var(--spacing) * 3);
+	--spacing-4: calc(var(--spacing) * 5);
+	--spacing-5: calc(var(--spacing) * 8);
+	--spacing-6: calc(var(--spacing) * 13);
+	--spacing-7: calc(var(--spacing) * 21);
+	--spacing-8: calc(var(--spacing) * 34);
+	--spacing-9: calc(var(--spacing) * 55);
 
-	/* container */
+	/* container (fibonacci) */
 	--container: calc(var(--spacing) * 16);
 	--container-1: calc(var(--container) * 1);
 	--container-2: calc(var(--container) * 2);
-	--container-4: calc(var(--container) * 4);
-	--container-8: calc(var(--container) * 8);
-	--container-16: calc(var(--container) * 16);
-	--container-32: calc(var(--container) * 32);
-	--container-64: calc(var(--container) * 64);
+	--container-3: calc(var(--container) * 3);
+	--container-4: calc(var(--container) * 5);
+	--container-5: calc(var(--container) * 8);
+	--container-6: calc(var(--container) * 13);
+	--container-7: calc(var(--container) * 21);
+	--container-8: calc(var(--container) * 34);
+	--container-9: calc(var(--container) * 55);
 
 	/* styles */
 
