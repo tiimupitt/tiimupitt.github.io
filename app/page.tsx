@@ -1,9 +1,12 @@
-import styles from './styles.module.css'
+import styles from '@/app/styles.module.css'
+import Sidebar from '@/app/ui/sidebar'
 
 export default function Page() {
   return (
     <div className={styles.page}>
-      <main />
+      <main>
+        <Sidebar />
+      </main>
     </div>
   )
 }
