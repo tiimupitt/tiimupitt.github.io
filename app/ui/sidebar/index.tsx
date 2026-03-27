@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
-import GithubIcon from '@/app/icon/github'
-import LinkedinIcon from '@/app/icon/linkedin'
 import MeImage from '@/app/image/me.jpg'
+import GithubIcon from '@/app/svg/github'
+import LinkedinIcon from '@/app/svg/linkedin'
 import EmbossedLeather from '@/app/ui/embossed-leather'
 
 import styles from './styles.module.css'
