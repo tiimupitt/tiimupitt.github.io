@@ -56,7 +56,6 @@
 	a {
 		display: flex;
 		justify-content: center;
-		width: var(--container-1);
 		padding: var(--spacing-2);
 		border-radius: var(--spacing-2);
 		box-shadow: 0 var(--spacing-1) var(--spacing-2) var(--color-black-translucent);
@@ -69,8 +68,13 @@
 		}
 	}
 
-	svg > path {
-		fill: var(--color-green-mid);
+	svg {
+		width: var(--spacing-6);
+		height: var(--spacing-6);
+
+		path {
+			fill: var(--color-green-mid);
+		}
 	}
 }
 
