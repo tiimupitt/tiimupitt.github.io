@@ -8,15 +8,16 @@
 
 .tab {
 	position: relative;
+	bottom: -1px;
 	display: flex;
 	width: min-content;
 	margin-left: 20%;
 	
 	svg {
 		z-index: 3;
-		width: min-content;
+		width: var(--spacing-7);
 		height: var(--spacing-7);
-		margin: 0 -1px -1px;
+		margin: 0 -2px -1px;
 
 		&:last-child {
 			transform: scaleX(-1);
