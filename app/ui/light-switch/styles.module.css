@@ -10,6 +10,7 @@
     background: radial-gradient(circle at center, transparent, transparent 15rem, #f7af66a4 20rem, #16100A 25rem);
     filter: blur(30px);
     pointer-events: none;
+    opacity: 0;
 
     @media screen and (width >= 1300px) {
 		display: initial;

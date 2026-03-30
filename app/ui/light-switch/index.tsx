@@ -3,7 +3,7 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import Image from 'next/image'
-import { FunctionComponent, useRef, useState } from 'react'
+import { FunctionComponent, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 import LightSwitchBeadsImage from '@/app/image/light-switch-beads.png'
@@ -16,10 +16,9 @@ const LightSwitch: FunctionComponent = () => {
   const blackoutRef = useRef<HTMLDivElement>(null)
   const switchRef = useRef<HTMLDivElement>(null)
   const [isLightOn, setIsLightOn] = useState(true)
+  const [isMounted, setIsMounted] = useState(false)
 
-  useGSAP(() => {
-    gsap.set(blackoutRef.current, { background: 'radial-gradient(circle at center, transparent, transparent 15rem, transparent 20rem, transparent 25rem)', duration: 0.3, ease: 'expo.out', opacity: 0 })
-  }, { scope: blackoutRef })
+  useGSAP(() => {}, { scope: blackoutRef })
 
   const handleMouseMove = (event: globalThis.MouseEvent) => {
     const { pageX, pageY } = event
@@ -52,7 +51,12 @@ const LightSwitch: FunctionComponent = () => {
     gsap.to(switchRef.current, { duration: 0.2, ease: 'expo.inOut', y: 0 })
   }
 
-  window.addEventListener('mousemove', handleMouseMove)
+  useEffect(() => {
+    setIsMounted(true)
+    window.addEventListener('mousemove', handleMouseMove)
+
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
 
   return (
     <>
@@ -67,7 +71,7 @@ const LightSwitch: FunctionComponent = () => {
           <Image alt="" src={LightSwitchHandleImage} />
         </button>
       </div>
-      {createPortal(
+      {isMounted && createPortal(
         <div className={styles.blackout} ref={blackoutRef} />,
         document.body,
       )}
