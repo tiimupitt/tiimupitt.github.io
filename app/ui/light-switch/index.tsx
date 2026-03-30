@@ -17,6 +17,7 @@ const LightSwitch: FunctionComponent = () => {
   const switchRef = useRef<HTMLDivElement>(null)
   const [isLightOn, setIsLightOn] = useState(true)
   const [isMounted, setIsMounted] = useState(false)
+  const [isAnimating, setIsAnimating] = useState(false)
 
   useGSAP(() => {}, { scope: blackoutRef })
 
@@ -27,6 +28,8 @@ const LightSwitch: FunctionComponent = () => {
   }
 
   const handleToggleLightSwitch = () => {
+    setIsAnimating(true)
+
     gsap
       .timeline()
       .to(switchRef.current, { duration: 0.2, ease: 'expo.inOut', onComplete: () => setIsLightOn(!isLightOn), y: '10rem' })
@@ -36,18 +39,26 @@ const LightSwitch: FunctionComponent = () => {
       gsap
         .timeline()
         .to(blackoutRef.current, { background: 'radial-gradient(circle at center, #16100A, #16100A 15rem, #16100A 20rem, #16100A 25rem)', delay: 0.2, duration: 0.3, ease: 'expo.out', opacity: 1 })
-        .to(blackoutRef.current, { background: 'radial-gradient(circle at center, transparent, transparent 15rem, #f7af66a4 20rem, #16100A 25rem)', delay: 0.2, duration: 1.2, ease: 'elastic.inOut' })
+        .to(blackoutRef.current, { background: 'radial-gradient(circle at center, transparent, transparent 15rem, #f7af66a4 20rem, #16100A 25rem)', delay: 0.2, duration: 1.2, ease: 'elastic.inOut', onComplete: () => setIsAnimating(false) })
     }
     else {
-      gsap.to(blackoutRef.current, { background: 'radial-gradient(circle at center, transparent, transparent 15rem, transparent 20rem, transparent 25rem)', delay: 0.2, duration: 0.3, ease: 'expo.out', opacity: 0 })
+      gsap.to(blackoutRef.current, { background: 'radial-gradient(circle at center, transparent, transparent 15rem, transparent 20rem, transparent 25rem)', delay: 0.2, duration: 0.3, ease: 'expo.out', onComplete: () => setIsAnimating(false), opacity: 0 })
     }
   }
 
   const handleLightSwitchMouseEnter = () => {
+    if (isAnimating) {
+      return
+    }
+
     gsap.to(switchRef.current, { duration: 0.2, ease: 'expo.inOut', y: '1rem' })
   }
 
   const handleLightSwitchMouseLeave = () => {
+    if (isAnimating) {
+      return
+    }
+
     gsap.to(switchRef.current, { duration: 0.2, ease: 'expo.inOut', y: 0 })
   }
 
