@@ -22,7 +22,7 @@
 
 .embossing {
 	position: absolute;
-	z-index: 10;
+	z-index: var(--z-index-embossed-leather);
 	display: grid;
 	grid-template:
 		'top-left-corner top-left-edge top-center top-right-edge top-right-corner' var(--container-2)

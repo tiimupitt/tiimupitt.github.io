@@ -11,7 +11,7 @@
 .tab {
 	position: relative;
 	bottom: -1px;
-	z-index: 2;
+	z-index: var(--z-index-file-tab);
 	display: flex;
 	align-items: center;
 	width: min-content;
@@ -22,7 +22,7 @@
 	
 	
 	svg {
-		z-index: 3;
+		z-index: var(--z-index-file-tab-curve);
 		width: var(--spacing-7);
 		height: var(--spacing-7);
 		margin: 0 -2px -1px;
@@ -53,7 +53,7 @@
 		position: absolute;
 		bottom: calc(var(--spacing-6) * -1);
 		left: calc(var(--spacing-8) * -1);
-		z-index: 3;
+		z-index: var(--z-index-file-tab-fade);
 		width: calc(100% + (var(--spacing-8) * 2));
 		height: var(--spacing-6);
 		border-radius: var(--spacing-8);
@@ -128,7 +128,7 @@
 	&::before, &::after {
 		content: '';
 		position: absolute;
-		z-index: 1;
+		z-index: var(--z-index-file-window-fade);
 		width: calc(100%);
 		height: var(--spacing-7);
 

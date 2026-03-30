@@ -3,6 +3,7 @@
 :root {
 	/* colors */
 	--color-green-light: #E8ECE6;
+	--color-green-light-translucent: #E8ECE680;
 	--color-green-mid: #2A501E;
 	--color-green-dark: #162E0E;
 	--color-blue-light: #DCE3EB;
@@ -34,6 +35,14 @@
 	--container-7: calc(var(--container) * 21);
 	--container-8: calc(var(--container) * 34);
 	--container-9: calc(var(--container) * 55);
+	
+	/* z-index */
+	--z-index-paper: -1;
+	--z-index-file-window-fade: 1;
+	--z-index-file-tab: 2;
+	--z-index-file-tab-curve: 3;
+	--z-index-file-tab-fade: 4;
+	--z-index-embossed-leather: 5;
 
 	/* styles */
 	font-size: 8px;
